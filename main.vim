@@ -68,6 +68,11 @@ endif
 call SpaceVim#begin()
 
 call SpaceVim#custom#load()
+func! s:transparent_background()
+highlight Normal guibg=None ctermbg=None
+highlight NonText guibg=None ctermbg=None
+endf
+autocmd ColorScheme * call s:transparent_background()
 
 call SpaceVim#default#keyBindings()
 
