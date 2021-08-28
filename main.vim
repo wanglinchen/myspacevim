@@ -68,13 +68,14 @@ endif
 call SpaceVim#begin()
 
 call SpaceVim#custom#load()
-func! s:transparent_background()
-highlight Normal guibg=None ctermbg=None
-highlight NonText guibg=None ctermbg=None
-endf
-autocmd ColorScheme * call s:transparent_background()
 
 call SpaceVim#default#keyBindings()
-
+" Begin:透明设置
+func! s:transparent_background()
+  highlight Normal guibg=NONE ctermbg=NONE
+  highlight NonText guibg=NONE ctermbg=NONE
+endf
+autocmd ColorScheme * call s:transparent_background()
+" End:透明设置
 call SpaceVim#end()
 " vim:set et sw=2 cc=80:
